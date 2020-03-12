@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <body id="body">
+  Body start
+  <div id="demowrapper">
+    Demowrapper-Start
+      <div id="demo">
+        Demo area
+        <div id="subdemo">subdemo_area</div>
+      </div>
+     Demowrapper-End
+  </div>
+  Body ends
+  </body>
+  
+  <script>
+  
+  //Event Propagation
+  //Write three event handlers each for each element (including body)
+  document.body.addEventListener('click', 
+    function(){alert('from outer body!');}
+  );
+  const demowrapper_element = document.getElementById("demowrapper");
+  demowrapper_element.addEventListener('click',
+    function(){alert('from demowrapper');}
+  );
+  const demo_element = document.getElementById("demo");
+  demo_element.addEventListener('click',
+    function(){alert('from demo');}
+  );
+  /* note: sub_demo section does not have a defined handler. Hence "click" event on subdemo element will propagate up to parent <div> containers like bubble */
+  </script>
+  
+  <style>
+  /*Having the base div style as first item in style : WORKS*/
+  div {
+  	margin:5px;
+    padding:5px;
+    text-align:center
+  }
+  
+  /*id specific stlyes*/
+  #body{background-color: purple;}
+  #demowrapper{background-color: red;}  
+  #demo{background-color: blue;}
+  #subdemo{background-color: yellow;}
+  #body{background-color: green;}
+  
+  /* Having the base div style as last item - DOES NOT WORK
+  div {
+  	margin:5px;
+    padding:5px;
+    text-align:center
+  }
+  */
+  
+  </style>
+  
+</html>
