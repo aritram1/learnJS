@@ -61,7 +61,7 @@ superpowers[Symbol.iterator] =  function(){ //Iterator function
                 let next;
                 if(this.count < 5){
                     next =  {
-                        value : count+=1,       //Value that gets returned, of type ANY
+                        value : this.count+=1,       //Value that gets returned, of type ANY
                         done : false            // This is set to true once the all values are iteratied
                     }
                 }
@@ -90,3 +90,5 @@ console.log(iterator.next()); //{ value: 3, done: false }
 
 // The iterator fucntion and the next() method both are interesting hooks to modify or define new 
 // iteraing behaviors for custom objects. We will have another look on this in Generator.
+
+//For the time being we will try iterating the powers in our super object.
