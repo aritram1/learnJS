@@ -1,11 +1,11 @@
 // Use of Symbol.iterator
 
-// How do you understand if an object is iterable or not. The property identification is not reflective.
-// For iterable object, it must have a function (i.e. iterator function) defined with key 'Symbol.iterator'. 
-// The iterator function on execution produces iterator object that is used to iterate the collection.
+// How do you understand if an object is iterable or not. The property identification is not reflective (meaning sometime 
+// an object may be iterable but may lack an iterator). For iterable object, it must have a function (i.e. iterator function) 
+// defined with key 'Symbol.iterator'. The iterator function on execution produces iterator object that is used to iterate 
+// the Object. For collection type Objects, there will be a default iterator defined.
 
-// Lets take an example with an Array. For collection type iterables, there will be a default iterator defined.
-// Welcome some students :)
+// Lets take an example with an Array. Welcome some students :)
 let students = [
     {
         name: 'spiderman', 
