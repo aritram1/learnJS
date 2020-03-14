@@ -26,7 +26,7 @@ let students = [
 //    done : boolean
 // } 
 iterator = students[Symbol.iterator]();
-console.dir(`students data is iterable : ${iterator !== undefined}`);
+console.log(`students data is iterable : ${iterator !== undefined}`); //Expected : true
 
 
 // It is not mandatory every iterable object has an interable defined, but usually an iterable is defined for iterable objects.
