@@ -1,21 +1,33 @@
-//Some sample values
+//A non Homogneous array with different type of objects. Our motto is to 
+// Add the numbers with matching elements
+// Filter certain values from the arry based on certain condition]
 
-values = [
-  {'a':1, 'accept':true},
-  {'a' : 2},
-  {'b':3},
-  {'c':4}
+healthProfessionals = [
+  {'staff':1, 'doctor': 2, 'ready':true},
+  {'physician': 2, 'general' : 5, 'staff' : 10, },
+  {'general':3},
+  {'doctor':4, 'staff': 10}
 ]; 
 
-process = function(obj, retval=0){
-  if(j.accept){
-    if (obj.a) retval+=obj.a;
-    if (obj.b) retval+=obj.b;
-    if (obj.c) retval+=obj.c;
-  }
-  return retval;
+process = function(professional, count=0){
+  if (professional.staff) count+=professional.staff;
+  if (professional.doctor) count+=professional.doctor;
+  if (professional.phsician) count+=professional.physician;
+  if (professional.general) count+=professional.general;
+  return count;
 }
 
-values.reduce(function(initial,next){
-  return initial + process(next);
+//Now let's test if the processing is done correctly for ready professionals.
+allProfs = healthProfessionals.reduce(function(accumulator,next){
+  nextvalue = next.ready ? process(next) : 0; //process adds the processing layer for each entry, as required.
+  return accumulator + nextvalue; 
+}, 0);
+//Outputs 3
+// {'staff':1, 'doctor': 2, 'ready':true}
+
+// With slight change we can find out other values as well.
+// e.g. We need to find out all doctors irrespective of their ready state.
+allDocs = healthProfessionals.reduce(function(accumulator,next){
+  nextvalue = process(next) : 0; //process adds the processing layer for each entry, as required.
+  return accumulator + nextvalue; 
 }, 0);
