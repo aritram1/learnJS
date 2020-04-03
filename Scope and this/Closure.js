@@ -21,7 +21,7 @@ const add15ToIt = function(number){
 
 console.dir(add15ToIt());
 
-//If we inspect the function returned, in developer console, a closure variable {adder:15} is 
-//returned with the function to use it while executing
+//If we inspect the function returned, in developer console, we can see, a closure variable {adder:15} 
+//is returned with the anonymous function to use it while executing
 
 //Noice :)
