@@ -4,7 +4,7 @@
 // A promise takes two func names that represents resolve and reject result of the promise. The arguments are 
 // position based and not name based (so we can play with the names :D)
 
-// It checks whther it is immidiaately required to fulfill the promise
+// It checks whther it is immidiately required to fulfill the promise
 
 // If it is ->  it resolves as Egiye ja (Go ahead) 
 // Else it rejects as Missed it.
