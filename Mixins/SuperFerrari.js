@@ -45,4 +45,4 @@ superFerrari.addWings();
 superFerrari.run(); //Prints : A Red Ferrari running with 4 wheels !
 superFerrari.fly(); //Prints : See! A Red Ferrari with 4 wheels can now fly !
 
-// End of fun :)
+// EOF = End of fun :)
