@@ -28,21 +28,24 @@ const ferrari = new Car('Ferrari', 'red');
 ferrari.run(); // Prints: A red Ferrari running with 4 wheels !
 ferrari.fly(); // Prints : Ferrari is not a high tech car yet! :(
 
-// Our poor red ferrari can not fly yet. Let's bring some high tech in action so we can make our 
-// superferrari that can fly :)
+// Our poor red ferrari can not fly yet. Let's bring some high tech in action 
+// so we can make our superferrari that can fly :)
 const HighTech = {
     addWings(){
         this.ht = true; // Isn't it amazing "ht" property in Car class can be changed from here ;)
     }
 }
 
-// And let's make a superferrari now by mixin'g HighTech to our red Ferrari
+// And let's make a superferrari now by mixin'g HighTech to our red Ferrari. 
+// Object.assign = Secret (and only) sauce of Mixin
+// After mixin, we can add wings to our ferrari so it can fly
 const superFerrari = Object.assign(ferrari, HighTech);
 superFerrari.addWings();
 // Ferrari is now superFerrari
 
-//Lets make it fly
-superFerrari.run(); //Prints : A Red Ferrari running with 4 wheels !
+// Let's make it fly
 superFerrari.fly(); //Prints : See! A Red Ferrari with 4 wheels can now fly !
+
+// Great! Mottoh achieved! :)
 
 // EOF = End of fun :)
