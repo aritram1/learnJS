@@ -17,7 +17,7 @@ class Car{
     }
     fly(){
         if(this.ht) 
-            console.log(`See! A ${this.color} ${this.name} with ${this.wheels} wheels can now fly !`);
+            console.log(`See! The ${this.color} ${this.name} with ${this.wheels} wheels can now fly !`);
         else
             console.log(`${this.name} is not a high tech car yet! :(`);
     }
