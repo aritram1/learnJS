@@ -5,7 +5,7 @@
 // .then()          // if there is no error retrieved
 // .catch()         // if there is error while retrieving
 
-// Lets take the same exampel as previous one (XHR example)
+// Lets take the same example as previous one (XHR example)
 
 const endpoint = 'https://ghibliapi.herokuapp.com/films';
 fetch(endpoint)
