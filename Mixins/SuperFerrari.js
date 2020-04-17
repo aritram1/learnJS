@@ -44,7 +44,7 @@ superFerrari.addWings();
 // Ferrari is now superFerrari
 
 // Let's make it fly
-superFerrari.fly(); //Prints : See! A Red Ferrari with 4 wheels can now fly !
+superFerrari.fly(); //Prints : See! The Red Ferrari with 4 wheels can now fly !
 
 // Great! Mottoh achieved! :)
 
