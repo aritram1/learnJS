@@ -82,3 +82,24 @@ let cognizant = new Player('cognizant');
 aritra.turn = true;
 let fightstat = play(aritra, cognizant);
 console.log(`Fight stat : ${JSON.stringify(fightstat)}`);
+
+
+// Expected output
+/*
+-------------------------
+| Player1     |   Player2|
+--------------------------
+Health|Ammo   |   Health|Ammo
+100|1000----------->100|1000
+100|997----------->98|1000
+100|994<***********96|1000
+98|994<***********96|997
+...
+76|949<***********66|964
+74|949----------->66|961
+...
+34|883----------->22|901
+34|880----------->20|901
+Exiting after 73 fights
+VM4921:84 Fight stat : {"count":73,"player1":41,"player2":33}
+*/
