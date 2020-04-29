@@ -4,12 +4,12 @@
 //cb = a callback function that wil be executed after the js code is evaluated
 //er = optional parameter (only mandatory for rejection scenario)
 
-myeval = function(code, cb, er){
+myeval = function(code, cb, rejectError){
     return new Promise((resolve, reject) => {
-        res = eval(code);
+        result = eval(code);
         
         //The following line is applicable only to resolve/reject scenario
-        res ? resolve ({'cb' : cb, 'data' : res}) : reject({'cb' : cb, 'er' : er}); //watch both the object structures
+        result ? resolve ({'cb' : cb, 'data' : result}) : reject({'cb' : cb, 'er' : rejectError}); //watch both the object structures
     })
     .then((arg) =>{
         //this block handles the resolve scenario
@@ -18,10 +18,8 @@ myeval = function(code, cb, er){
     .catch((err)=>{
         //this block handles both rejection and error scenario
         if(err){
-            //rejection scenario
-            if(err.cb && err.er) err.cb(err.er);
-            //error scenario   
-            else console.log('Error occurred within the Promise : ', err);
+            if(err.cb && err.er) err.cb(err.er);    //rejection scenario
+            else console.log('Error occurred within the Promise : ', err);  //error scenario
         }
     });
 }
