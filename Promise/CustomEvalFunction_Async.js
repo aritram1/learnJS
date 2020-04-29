@@ -46,9 +46,9 @@ function testError(){
   myeval('new ABC()', callback);   
 }
 
-console.log('started [See execution orders are maintained :)]');
+console.log('started');
 testResolve();
-/* Expected output : See execution orders are maintained :) */
+/* Expected output in order : See callback is working :) */
 // started
 // result : Thu Apr 30 2020 00:53:35 GMT+0530 (India Standard Time)
 // finished
@@ -68,3 +68,5 @@ testError();
 //    at myeval (<anonymous>:8:12)
 //    at testError (<anonymous>:51:3)
 //    at <anonymous>:68:1
+
+// End of fun :)
