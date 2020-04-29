@@ -101,5 +101,5 @@ Health|Ammo   |   Health|Ammo
 34|883----------->22|901
 34|880----------->20|901
 Exiting after 73 fights
-VM4921:84 Fight stat : {"count":73,"player1":41,"player2":33}
+Fight stat : {"count":73,"player1":41,"player2":33}
 */
