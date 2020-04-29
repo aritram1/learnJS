@@ -19,12 +19,9 @@ myeval = function(code, cb, er){
         //this block handles both rejection and error scenario
         if(err){
             //rejection scenario
-            if(err.cb && err.er) 
-              err.cb(err.er);
-            
+            if(err.cb && err.er) err.cb(err.er);
             //error scenario   
-            else 
-              console.log('Error occurred within the Promise : ', err);
+            else console.log('Error occurred within the Promise : ', err);
         }
     });
 }
