@@ -47,8 +47,8 @@ function testError(){
 }
 
 console.log('started');
-testResolve();
 /* Expected output in order : See callback is working :) */
+testResolve();
 // started
 // result : Thu Apr 30 2020 00:53:35 GMT+0530 (India Standard Time)
 // finished
@@ -60,7 +60,7 @@ testReject('Rejection Comment!');
 // finished
 
 testError();
-// started [See execution orders are maintained :)]
+// started
 // Error occurred within the Promise :  ReferenceError: ABC is not defined
 //    at eval (eval at <anonymous> (local-ntp.html:9), <anonymous>:1:1)
 //    at <anonymous>:9:15
