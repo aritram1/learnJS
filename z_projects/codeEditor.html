@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#fireIt").click(function(){
+    codeElement = $("#func1");
+	code = codeElement.val();
+    result = eval(code);
+    $("#resultPanel").text('code executed');
+    $("#result").text(result);
+  });
+});
+</script>
+</head>
+<body>
+
+<h1><u> Write your code </u></h1>
+<textarea id="func1" style="margin:2px">
+</textarea> </br>
+<button id="fireIt">fire It</button>
+<div id="resultPanel">Not executed yet. Click fire It to execute.</div>
+<h1><u> Result </u></h1>
+<div id="result"> Yet to come</div>
+
+</body>
+</html>
