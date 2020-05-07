@@ -1,3 +1,4 @@
+// Test from : https://jsbench.me/
 // indexOf/lastIndexOf
 // ---------------------------------------------------------------------------------------------
 // Let's see two ways of finding presence of a character in a string. indexOf(char) returns the first occurence 
