@@ -12,12 +12,12 @@ char='s'
 river.reverse().indexOf(char);
 river.lastIndexOf(char); //still 23% slower
 
-// The examples, can not ignore disctribution of the character in the string. 
-// So lets run for all characters and also test with one character word
+// The examples, can not ignore disctribution of the character in the string, so lets run for all characters 
+// of the string
 river.forEach(char => { river.reverse().indexOf(char);});
 river.forEach(char => { river.lastIndexOf(char); }); // still 19% slower
 
-// One character word
+// Also test with one character word
 Word='Q';
 Word.forEach(char => { Word.reverse().indexOf(char);});
 Word.forEach(char => { Word.lastIndexOf(char); }); // still 26% slower
