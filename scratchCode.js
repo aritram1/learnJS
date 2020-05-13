@@ -19,3 +19,13 @@ iterable={
         }
     }
 }
+
+// usage to be like
+// c = new iterator('counter')
+// console.log(`Iterator name is ${c.name}`);
+// while (true){
+//     nextval = c.next();
+//     console.log('Value is ->' + nextval);
+//     if (nextval.done)
+//         break;
+// }
