@@ -19,3 +19,6 @@ Currently the following topics are covered/in progress :
 - More on Webservices (Http/Rest) requests
 
 More...
+
+To read:
+Function declaration, function expression : https://javascript.info/function-expressions
