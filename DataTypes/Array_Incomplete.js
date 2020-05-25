@@ -6,7 +6,11 @@
 // Let's see with an example. Convert this messageArray to an array splitting with whitespaces.
 msgArray = ["It's sunny in", "", "California"];
 
-console.log(msgArray.map(x=>{return x.split(' ');}).flat());
+console.log(msgArray.map(x=>{
+    return x.split(' ');
+}).flat());
 
 // However with flatMap we can achieve the same like this.
-console.log(msgArray.flatMap(x=>{x.split(' ')}));
+console.log(msgArray.flatMap(x=>{
+    x.split(' ')
+}));
