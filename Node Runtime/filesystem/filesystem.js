@@ -20,9 +20,9 @@ var newFile2 = fs.readFile(file, 'utf8', function(err, data){
 });
 
 // append file
-const aritra = myutil.generate('aritra', 'mukherjee', 'Mr.', 'Javascript');
-const moniseeta = myutil.generate('moniseeta', 'roy', 'Mrs.', 'Docker');
-const bhai = myutil.generate('aritra', 'roy', 'Mr.', 'Flutter');
+const aritra = myutil.generateData('aritra', 'mukherjee', 'Mr.', 'Javascript');
+const moniseeta = myutil.generateData('moniseeta', 'roy', 'Mrs.', 'Docker');
+const bhai = myutil.generateData('aritra', 'roy', 'Mr.', 'Flutter');
 entries = aritra + moniseeta + bhai;
 var newFile3 = fs.appendFile('./data', entries, function(err, data){
     if(!err){
