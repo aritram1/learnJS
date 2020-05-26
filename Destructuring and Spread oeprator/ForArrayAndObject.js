@@ -4,11 +4,11 @@
 let superheroes = ['batman', 'superman'], moresuperheroes = ['spiderman', ['Batul', 'Shonku']]
 console.log(`All superheroes : ${[...superheroes, ...moresuperheroes]}`)
 // outputs : All superheroes : batman,superman,spiderman,Batul,Shonku
-// Watch how it flattens any array
+// 💡 Watch how it flattens any array
 
 // Object destructuring
 
-// Let's see how destructuring and ...rest oeprator works on an object and within a method argument
+// Let's see how destructuring and ...rest operator works on an object and within a method argument
 person = {
     name : 'aritra',
     address : {
@@ -34,6 +34,6 @@ function show({name , address : {city}, places , ...rest }){
 show(person);
 // Outputs : aritra lives in kolkata and go to these places : home,office,playground
 
-// watch how .... can be used both as a spread oeprator and rest operator
+// 💡 watch how .... can be used both as a spread oeprator and rest operator ;)
 
 // EOFun :)

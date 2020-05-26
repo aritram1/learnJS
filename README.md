@@ -22,3 +22,6 @@ More...
 
 To read:
 Function declaration, function expression : https://javascript.info/function-expressions
+
+All Symbols used :
+idea : 💡
