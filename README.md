@@ -20,15 +20,17 @@ Currently the following topics are covered/in progress :
 
 More...
 
-To read:
-Function declaration, function expression : https://javascript.info/function-expressions
+## References:
+- Function declaration, function expression : https://javascript.info/function-expressions
 
-All Symbols used :
-idea : 💡
-bug : 
-person : 
-Trophy : 🏆
-Medals : 🥇 🥈 🥉
-bus : 🚌
-car : 🚓 🚗 🚐 
-plane : ✈️ 🚂
+# All Symbols used :
+- idea : 💡
+- Trophy : 🏆
+
+- bug : 
+- person : 
+- Medals : 🥇 🥈 🥉
+- bus : 🚌
+- car : 🚓 🚗 🚐 
+- plane : ✈️ 🚂
+https://www.iemoji.com/view/emoji/844/travel-places/locomotive

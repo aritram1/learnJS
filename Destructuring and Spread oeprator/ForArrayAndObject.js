@@ -34,6 +34,6 @@ function show({name , address : {city}, places , ...rest }){
 show(person);
 // Outputs : aritra lives in kolkata and go to these places : home,office,playground
 
-// 💡 watch how .... can be used both as a spread oeprator and rest operator ;)
+// 💡 watch how ... can be used both as a spread oeprator and rest operator ;)
 
 // EOFun :)
