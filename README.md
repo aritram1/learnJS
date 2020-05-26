@@ -20,7 +20,7 @@ Currently the following topics are covered/in progress :
 
 More...
 
-## References:
+# References/Further read :
 - Function declaration, function expression : https://javascript.info/function-expressions
 
 # All Symbols used :
