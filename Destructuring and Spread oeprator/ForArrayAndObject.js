@@ -16,12 +16,14 @@ person = {
         state : 'wb'
     },
     places : ['home', 'office', 'playground'],
-    games : ['football', 'cricket']
+    games : ['football', 'cricket', ['chess', 'tic-tac-toe']]
 }
-// For desctructuring the  variable names must EXACTLY match
+// For desctructuring 
+// the  variable names must EXACTLY match. variables can be aliased, e.g. name -> fullname
+// ignores any nested array struture, e.g. nested array in games variables will be flattened
 let {name : fullname, games} = person;
 console.log(`Name is : ${fullname} and plays : ${games}`);
-// outputs : Name is : aritra and plays : football,cricket
+// output : Name is : aritra and plays : football,cricket,chess,tic-tac-toe
 
 
 // Let's see the destructuring and ...rest oeprator work within a method argument
