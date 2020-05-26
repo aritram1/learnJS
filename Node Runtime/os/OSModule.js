@@ -1,7 +1,7 @@
 moduleName='os'
 module=require(moduleName)
 methodName='arch'
-console.log(`${eval(${module}.${methodName}))}`)
+//console.log(`${eval(${module}.${methodName}))}`)
 
 displayAllMethods = function(){
   console.log(`Methods of ${moduleName} modules are :`);
@@ -10,13 +10,13 @@ displayAllMethods = function(){
   }    
 }
 
-callMethod(name){
+callMethod = function(name){
   console.log(`os.${name}() method is called`);
   src=`${module}.${method}()`;
   console.log(`The result is ${eval(res)}`);
 }
 
-callAllMethods(){
+callAllMethods = function(){
   for(o in os){
     callMethod(o);
   }
