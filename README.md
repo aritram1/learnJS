@@ -25,3 +25,10 @@ Function declaration, function expression : https://javascript.info/function-exp
 
 All Symbols used :
 idea : 💡
+bug : 
+person : 
+Trophy : 🏆
+Medals : 🥇 🥈 🥉
+bus : 🚌
+car : 🚓 🚗 🚐 
+plane : ✈️ 🚂
