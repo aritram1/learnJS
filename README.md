@@ -33,4 +33,4 @@ More...
 - bus : 🚌
 - car : 🚓 🚗 🚐 
 - plane : ✈️ 🚂
-https://www.iemoji.com/view/emoji/844/travel-places/locomotive
+- all symbols : https://www.iemoji.com/view/emoji/844/travel-places/locomotive
