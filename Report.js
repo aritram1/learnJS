@@ -14,3 +14,11 @@ fetch('https://api.covid19india.org/raw_data6.json')
 .catch(error => {
     console.log('Error occurred to fetch data: ', error);
 })
+
+report_state={};
+for (r of _data){
+    if (r.detectedstate in report_state)
+        report_state[r.detectedstate] = report_state[r.detectedstate]+1;
+    else
+        report_state[r.detectedstate] = 0;
+}
