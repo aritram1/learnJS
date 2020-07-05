@@ -35,9 +35,16 @@ var testnum = function(num){
     })
 }
 passIt = msg => msg;
-[300, 200, 100, 50].forEach(i=>testnum(i));
 
+//Let's test it
+testnum(300);
+testnum(200);
+testnum(100);
+testnum(55);
+testnum(25);
 
 // Data is : greater than 200
 // Data is : greater than 100
+// Data is : greater than 50
 // Error : can not be between 76-99
+// Err0r : can not be between must be greater than 50
