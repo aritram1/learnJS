@@ -16,4 +16,4 @@ const getInfo = function (obj, availableTypes){
  getInfo(this, 'string, function'); //output {string: 6, function: 50}
  getInfo(this, 'random'); //output {}
  
- # EO Fun :)
+ // EO Fun :)
