@@ -1,0 +1,47 @@
+// To handle null values properly, we create a shadow representation of the entity. Later in code we can safely use
+// accessing any values of the object (returned) since we have already taken care null checking by assigning proper
+// default value using nullValue.
+
+// Let's see how the code goes.
+
+// Create a user constructor
+let user = function(name, id){
+    this.name = name;
+}
+
+// Create some default users
+let users = [];
+for (let _ in [1,2,3,4,5]){
+    users.push(new user(`user${_}`, `${_}`));
+}
+
+// Have the shadow representation. Usually the name is preceeded with Null/null
+let nulluser = function(){
+    this.name = 'Guest';
+    this.id = -1;
+}
+
+// Have the getUser method. If an user is not found it returns a Null user instance.
+let getUser = function getUser(id){
+    const user = users.find(u => u.id === id);
+    if(!user) return new nulluser();
+    return user;
+}
+
+// Some more users
+users.push(new user('bob', 100));
+users.push(new user('aritra', 200));
+  
+  
+// Let's test the code with different arguments
+getUser() // nothing is passed 
+//nulluser {name: "Guest", id: -1}
+
+getUser(100) // matching value is passed
+// user {name: "bob", id: 100}
+
+getUser(101) // unmatching value is passed
+//nulluser {name: "Guest", id: -1}
+
+// End of fun ;)
+
