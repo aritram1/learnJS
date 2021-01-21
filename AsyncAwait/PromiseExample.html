@@ -1,0 +1,149 @@
+<!-- With Promise -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+
+                :root{
+
+                color: blue;
+
+    }
+
+    ::selection{
+
+                color: white;
+
+        background-color: purple;
+
+    }
+
+ 
+
+</style>
+
+<script>
+
+function setColor(element){
+
+                console.log('Inside setColor method');
+
+    setColorPromise(element.value)
+
+    .then((color)=>{
+
+                console.log(`Color ${color}`);
+
+        document.getElementById('btn').value=color;
+
+        document.getElementById('colorName').innerHTML = color;
+
+    })
+
+    .catch((error)=>{
+
+                console.log(`Error : ${error}`);
+
+    });
+
+}
+
+async function setColorPromise(value){
+
+                console.log('Inside setColorPromise method');
+
+   
+
+    return new Promise((resolve, reject)=>{
+
+                let allColors = ['red', 'blue', 'purple', 'orange', 'white', 'black'];
+
+        takeSomeTimeAndSetColorCode(2)
+
+        .then((colorCode)=>{
+
+            console.log('Inside then block, colorcode is fixed as ' + colorCode);
+
+            resolve(allColors[colorCode]);
+
+        })
+
+        .catch((error)=>{
+
+            console.log(`Error returned as ${JSON.stringify(error)} and it is being bubbled!`);
+
+            reject('Level 2 Error' + error);
+
+        });
+
+    });
+
+}
+
+ 
+
+async function takeSomeTimeAndSetColorCode(t){
+
+                console.log('Inside takeSomeTimeAndSetColor method');
+
+    return new Promise((resolve, reject) => {
+
+               
+
+      setTimeout(()=>{
+
+          console.log('Inside setTimeout method');
+
+          let colorCode = Math.ceil(Math.random() * 100)%6;
+
+          console.log('takeSomeTimeAndSetColor calculated Code as ->' + colorCode);
+
+          if(colorCode == 0) reject('Level 1 error : Bad Color code!');
+
+          resolve (colorCode);
+
+      }, t*1000);
+
+   
+
+    })
+
+   
+
+    return 'hey';
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div>
+
+                <input type='button' value="Set color" id='btn' onclick="setColor(this)"/>
+
+    Color is set as <span id='colorName'></span>
+
+</div>
+
+ 
+
+<p id='first'> First Paragraph <br>hey</br></p>
+
+<p id='second'> Second Paragraph <br>hey hey</br></p>
+
+<p id='third'> Third Paragraph <br>hey hey hey</br></p>
+
+ 
+
+ 
+
+</body>
+
+</html>
