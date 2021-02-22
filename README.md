@@ -13,15 +13,18 @@ Currently the following topics are covered/in progress :
 
 ## To be done
 - Currying
+- Patterns in Javascript (Facade/Null/Decorator/Proxy)
 - Callback, Asynchronous functions
 - Async await 
 - File I/O operations
 - More on Webservices (Http/Rest) requests
+- Monads
 
 More...
 
 # References/Further read :
 - Function declaration, function expression : https://javascript.info/function-expressions
+- ES6 : https://www.w3schools.com/js/js_es6.asp
 
 # All Symbols used :
 - idea : 💡
