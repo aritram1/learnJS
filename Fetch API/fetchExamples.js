@@ -2,7 +2,7 @@
 // Endpoint : The server endpoint from where the data to be retrieved
 
 const ENDPOINT = '/api/../example/data';
-const METHOD = 'POST';  //  Possible options are : GET, POST, PUT, DELETE [Use CAPITAL Cases]
+const METHOD = 'GET';  //  Possible options are : GET, POST, PUT, DELETE [Use CAPITAL Cases]
 const MODE = 'no-cors';
 const REDIRECT = 'follow';
 let HEADERS = new Headers({  // Header options can be passed in this way
