@@ -1,7 +1,7 @@
 # How to do AJAX call from Javascript
-There are 2 ways we will discuss here by which we can create ajax requests with javascript built in methods.
-- using XMLHttpRequest
-- using fetch API, whihc has a simpler syntax and follows a promise based approach
+Here we will discuss 2 ways to create ajax requests with vanilla javascript i.e. built in objects/methods.
+- with XMLHttpRequest, follows a callback based approach
+- with fetch API, which has a simpler syntax and follows a promise based approach
 
 Let's see both in details.
 ## Using XMLHttpRequest
@@ -24,22 +24,22 @@ let TIMELINE = [{
 }];    
 ```
 
-First step is to create the Request. XMLHttpRequest is the base class for making AJAX requests.
+First step is to create the Request. ```XMLHttpRequest``` is the base class for making an AJAX requests (implicitly or explicitly)
 
 ```
 let req = new XMLHttpRequest();
 ```
 
-As second step we need to call open() method with type, endpoint and operation type (whether sync/async) to initialize the request. The three prameters we have already defined before. We are using a sample film library hosted in heroku to get the data.
+As second step we need to call open() method to initialize the request. The type, endpoint and operation type (whether sync/async) are three prameters we have already defined before. We are using a sample film library hosted in heroku to get the data.
 ```
 req.open(type, endpoint, async);
 ```
 
 As penultimate step we will use an existing hook : onreadystatechange(), a method that will allow us to pass a function to fire eveytime the 
-request's state (i.e. it's readyState property) changes. The state can be between 0-4, the meanings are :
-- 0: request not initialized yet
-- 1: server connection established
-- 2: request received
+request's state (i.e. it's readyState property) changes. The state can be a numeric value between 0-4, which mean :
+- 0: request is not initialized yet
+- 1: server connection is established
+- 2: request is received
 - 3: processing request
 - 4: request finished and response is ready to process
 
@@ -55,7 +55,7 @@ req.onreadystatechange = function(){
     }
 }
 ```
-If the request is aborted in between, an ```onabort``` function helps to handle the consequences.
+Note : If the request is aborted in between, an ```onabort``` function helps to handle the consequences.
 ```
 req.onabort = function(){
     console.log('Aborted');
