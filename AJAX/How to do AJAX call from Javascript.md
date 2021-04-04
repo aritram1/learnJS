@@ -1,4 +1,4 @@
-# How to do AJAX call from Javascript 
+# How to do AJAX call from Javascript
 There are 2 ways we will discuss here by which we can create ajax requests with javascript built in methods.
 - using XMLHttpRequest
 - using fetch API, whihc has a simpler syntax and follows a promise based approach
