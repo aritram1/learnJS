@@ -9,10 +9,10 @@ The method takes 2 required parameter namely
 
 Let's take an example of how it can be presented in code. 
 
-The header and request body (for ```POST``` type requests) can be sent as part of optional second parameter.
 
-Default value of mode is ```no-cors```
-
+There are some default values of these specific properties. Let's see what they are :
+Default value of mode is ```no-cors``` [We will go through the cross orogin resource share information in a next script]
+DEfault value of method is ```GET```
 ```
 const ENDPOINT = '/api/../example/data';
 const METHOD = 'GET';
@@ -20,7 +20,7 @@ const MODE = 'no-cors';
 const REDIRECT = 'follow';
 ```
 
-Authorization can be sent as part of the optional second parameter.
+The header and request body (for ```POST``` type requests) can be sent as part of optional second parameter. Authorization can be sent as part of the ```header``` object.
 ```
 let HEADERS = new Headers({
   'Content-Type': 'text/plain',
@@ -31,16 +31,24 @@ const BODY = {
   'localTime' : new Date()
 };
 ```
+Let's break the code a bit. 
+- The first part creates a ```Header``` object with important properties (```content-type```, ```Authorization```)
+- The second part represents request body. It's simple now. Currently it sends only local time.
+
+💡 : Watch for the specific property names like ````method```, ```mode``, ```headers``` or ```body```. Get refrained from referencing them with another name/property. They are part of standard API.
+
+Let's call the fetch method now and log the response data and capture data if any - 
 
 ```
 fetch(ENDPOINT, {
-    method: METHOD,       //  DEFAULT is GET
-    mode: MODE,           //  DEFAULT no-cors
-    redirect: REDIRECT,   //
+    method: METHOD,
+    mode: MODE,           
+    redirect: REDIRECT,   
     headers: HEADERS,
     body: BODY
 })
 ```
+Process the data with a ```.then```, ```.catch``` block.
 
 ```
 .then(data =>{
@@ -49,6 +57,10 @@ fetch(ENDPOINT, {
 .catch(error=>{
     console.log(error);
 });
+
+In next script we will go through how we can use 3rd party supporting libraries for efficient request response management.
 ```
+# References:
+- MDN on Header() built in object
 
 //EOF = End of Fun ;)
