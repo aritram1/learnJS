@@ -32,7 +32,7 @@ The second parameter ```options``` can be used to send ```method```, ```authoriz
 }
 ```
 
-Regarding default values, these properties has some default values that are defaulted if value is not provided - e.g. defautl value for ```method``` is ```GET```. Let's see what they are and define some variables to capture the values.
+Regarding default values, these properties has some default values that are defaulted if value is not provided - e.g. default value for ```method``` is ```GET```. Let's see what other defaults are and define some variables to capture the values.
 - Default value of mode is ```no-cors``` [We will go through the cross orogin resource share information or CORS in a future script]
 - Default value of method is ```GET``` [Possible options are : ```GET```, ```POST```, ```PUT```, ```DELETE```. Remember to use the values in CAPITAL Cases.]
 - Default value of redirect is ```follow```
@@ -43,18 +43,18 @@ const MODE = 'no-cors';
 const REDIRECT = 'follow';
 ```
 
-The header and request body can also be created likewise. Request body is not applicable for GET type requests. 
-
-In below code the first part creates a ```Header``` object with important properties (```content-type```, ```Authorization```)
-- The second part represents request body. It's simple now. Currently it sends only local time.
+The header and request body can also be created likewise. Request body is not applicable for GET type requests. In below code 
+- the first part creates a ```Header``` object with important properties (```Content-type```, ```Authorization```) to send in the request. Also it can contain any custom header attribute that we may require to send (see 3rd line below)
+- the second part represents request body. It's simple now. Currently it sends a greeting message. It's not applicable for GET requests, so we changed the method to ```POST```.
 ```
 let HEADERS = new Headers({
   'Content-Type': 'text/plain',
-  'X-My-Custom-Header': 'value-v',
+  'My-Custom-Header': 'My-custom-value',
   'Authorization': 'Bearer ' + TOKEN
 });
+method = 'POST';
 const BODY = {
-  'localTime' : new Date()
+  'message' : 'Hello World'
 };
 ```
 💡 : Watch for the specific property names like ```method```, ```mode```, ```headers``` or ```body```. Get refrained from referencing them with another name/property. They are part of standard API.
