@@ -57,9 +57,9 @@ Process the data with a ```.then```, ```.catch``` block.
 .catch(error=>{
     console.log(error);
 });
-
-In next script we will go through how we can use 3rd party supporting libraries for efficient request response management.
 ```
+In next script we will go through how we can use 3rd party JS libraries (e.g axios) for better graded request response management.
+
 # References:
 - MDN on Header() built in object
 
