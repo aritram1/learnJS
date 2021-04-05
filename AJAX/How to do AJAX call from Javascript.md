@@ -91,22 +91,22 @@ fetch() returns a promise which can be handled with
 - ```.then()``` if there is no error retrieved
 - ```.catch()``` if there is error while retrieving or while executing inside ```.then``` block.
 
-Let's take the same example as XHR example and simplify with data. Note the line marked with *
+Let's take the same XHR example above and simplify with fetch(). we are chaining two ```.then``` methods, since ```response.json()``` always returns data as a ```Promise```.
 
 ```
 const endpoint = 'https://ghibliapi.herokuapp.com/films';
-fetch(endpoint)
+fetch(endpoint)                  // this is a 'GET' request
 .then(response => {
-    if(response.status === 200){ //return the response only for status code 200 OK
-        return response.json(); // *the json method returns another promise which can be chained.
+    if(response.status === 200){ // return the response only for status code 200 OK
+        return response.json();  // the json method returns another promise which is chained.
     }
 })
 .then(data => {
-    //process response as "data"
-    console.log('Data to process->' + data);
+    //Print the data to console
+    console.log('Data received ->' + JSON.stringify(data));
 })
 .catch(error => {
-    console.log('Error is encountered' + error);
+    console.log(`Error is encountered while fetching ${endpoint} : ${JSON.stringify(error)}`);
 })
 ```
 
