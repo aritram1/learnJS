@@ -2,25 +2,51 @@
 
 A fetch API is an easy way to get and post data from/to a web-server. 
 
-The method takes 2 required parameter namely 
-- ```Endpoint``` i.e. the server endpoint from where the data to be retrieved/post and 
-- ```method``` . Default value is ```GET```.
-💡 : Possible options are : ```GET```, ```POST```, ```PUT```, ```DELETE```. Remember to use the values in CAPITAL Cases.
-
-Let's take an example of how it can be presented in code. 
-
-
-There are some default values of these specific properties. Let's see what they are :
-Default value of mode is ```no-cors``` [We will go through the cross orogin resource share information in a next script]
-DEfault value of method is ```GET```
+The method takes 1 required parameter namely ```Endpoint``` i.e. the server endpoint from where the data to be retrieved/post 
 ```
 const ENDPOINT = '/api/../example/data';
+```
+
+Let's take an example of how to write fetch requests with an endpoint and a second optional parameter and process the response.
+
+```
+fetch(ENDPOINT, options)
+.then()
+.catch();
+```
+
+The second parameter ```options``` can be used to send ```method```, ```authorization-header```, ```content-type``` etc important attributes. It has a shape (with some default values) :
+```
+{
+    method: 'GET'
+    mode: 'no-cors'           
+    redirect: 'follow',   
+    headers: {
+      content-type : 'application/json'
+      ....
+    },
+    body: {
+      foo: 'bar'
+    }
+    ...
+}
+```
+
+Regarding default values, these properties has some default values that are defaulted if value is not provided - e.g. defautl value for ```method``` is ```GET```. Let's see what they are and define some variables to capture the values.
+- Default value of mode is ```no-cors``` [We will go through the cross orogin resource share information or CORS in a future script]
+- Default value of method is ```GET``` [Possible options are : ```GET```, ```POST```, ```PUT```, ```DELETE```. Remember to use the values in CAPITAL Cases.]
+- Default value of redirect is ```follow```
+
+```
 const METHOD = 'GET';
 const MODE = 'no-cors';
 const REDIRECT = 'follow';
 ```
 
-The header and request body (for ```POST``` type requests) can be sent as part of optional second parameter. Authorization can be sent as part of the ```header``` object.
+The header and request body can also be created likewise. Request body is not applicable for GET type requests. 
+
+In below code the first part creates a ```Header``` object with important properties (```content-type```, ```Authorization```)
+- The second part represents request body. It's simple now. Currently it sends only local time.
 ```
 let HEADERS = new Headers({
   'Content-Type': 'text/plain',
@@ -31,14 +57,10 @@ const BODY = {
   'localTime' : new Date()
 };
 ```
-Let's break the code a bit. 
-- The first part creates a ```Header``` object with important properties (```content-type```, ```Authorization```)
-- The second part represents request body. It's simple now. Currently it sends only local time.
+💡 : Watch for the specific property names like ```method```, ```mode```, ```headers``` or ```body```. Get refrained from referencing them with another name/property. They are part of standard API.
 
-💡 : Watch for the specific property names like ```method```, ```mode``, ```headers``` or ```body```. Get refrained from referencing them with another name/property. They are part of standard API.
 
 Let's call the fetch method now and log the response data and capture data if any - 
-
 ```
 fetch(ENDPOINT, {
     method: METHOD,
@@ -48,8 +70,8 @@ fetch(ENDPOINT, {
     body: BODY
 })
 ```
-Process the data with a ```.then```, ```.catch``` block.
 
+Process the data with a ```.then```, ```.catch``` block.
 ```
 .then(data =>{
     console.log(data);
