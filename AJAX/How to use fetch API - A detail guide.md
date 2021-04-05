@@ -35,7 +35,7 @@ Let's break the code a bit.
 - The first part creates a ```Header``` object with important properties (```content-type```, ```Authorization```)
 - The second part represents request body. It's simple now. Currently it sends only local time.
 
-💡 : Watch for the specific property names like ````method```, ```mode``, ```headers``` or ```body```. Get refrained from referencing them with another name/property. They are part of standard API.
+💡 : Watch for the specific property names like ```method```, ```mode``, ```headers``` or ```body```. Get refrained from referencing them with another name/property. They are part of standard API.
 
 Let's call the fetch method now and log the response data and capture data if any - 
 
