@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<h1>Species</h1>
+<p>Click on a species to see what type it is:</p>
+
+<ul>
+  <li id="owl" data-animal-type="bird">Owl</li>
+  <li id="salmon" data-animal-type="fish">Salmon</li>  
+  <li id="tarantula" data-animal-type="spider">Tarantula</li>  
+</ul>
+<script>
+function showDetails() {
+  let stat={total: [], w:[], own:[], o:[]};
+  document.querySelectorAll('ul > li').forEach(el=>{
+    el.addEventListener('click', ev =>{
+      console.log('Using `el` that is defined outisde : ' + 
+                  el.getAttribute("data-animal-type"));
+      console.log('Using event : ' + ev.target.getAttribute("data-animal-type"));
+      console.log('`this` refers to `window` object here.So making fun of [this] :D' + 
+                  ' this/Windows navigator name is' + this.navigator.appName);
+      var animalType = ev.target.getAttribute("data-animal-type");
+      console.log(`Now you know ${ev.target.innerHTML} is a type of ${animalType} !`);
+      
+      ///////////////////////////////////////////
+      for(let property in ev.target){
+        if (Object.prototype.hasOwnProperty.call(this, property)){ //this=windows
+        	stat['w'].push(property);
+        }
+        else if (Object.hasOwnProperty(property)){
+		    stat['o'].push(property);
+        }
+        else{
+        	stat['own'].push(property);
+        }
+        stat.total.push(property);
+      }
+      ///////////////////////////////////////////
+      console.log(`Stat : ${stat.w.length} properties are from window`);
+      console.log(`Stat : ${stat.o.length} properties are from object`);
+      console.log(`Stat : ${stat.own.length} properties are own!`);
+      console.log(`Stat : ${stat.total.length} properties are in total!`);
+
+	});
+  });
+}
+window.onload = showDetails();
+</script>
+</body>
+</html>
