@@ -1,8 +1,8 @@
 //Declare the credentialsendpoint = 'https://login.salesforce.com/services/oauth2/token';
 client_id ='3MVG9CVKiXR7Ri5rvrUq4agf146ewgy.9HnS7OcaWMzpJrL63x3HZjLjY_ShcpMKfx.0C6h1ojd8EOyWkt7dV';
-client_secret = '3871360791843354284';
+client_secret = '';
 username = 'aritram1@gmail.com';
-password = 'Aritra1985#jdTLtUFSpk5d4II90Q2Qb7c5u';
+password = '';
 grant_type = 'password';
 auth_url = 'https://login.salesforce.com/services/oauth2/token';
 
