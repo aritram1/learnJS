@@ -1,0 +1,57 @@
+# In a simple way we can authenticate from Salesforce. Let's see what are the steps.
+
+Step 1 : We need to define the attributes that will make us to authenticate from SF.
+
+```
+endpoint = 'https://login.salesforce.com/services/oauth2/token';
+client_id ='3MVG9CVKiXR7Ri5rvrUq4agf146ewgy.9HnS7OcaWMzpJrL63x3HZjLjY_ShcpMKfx.0C6h1ojd8EOyWkt7dV';
+client_secret = '<client_secret>';
+username = 'aritram1@gmail.com';
+password = '<password+Security token (if any)>';
+grant_type = 'password'; 
+```
+Step 2 : We need to ensure the payload is sent as form data. Sending them in a normal object will not work.
+
+This does not work.
+```
+let data1 = {
+    'username' : username,
+    'password' : password,
+    'client_id' : client_id,
+    'client_secret' : client_secret
+    'grant_type': grant_type
+};
+```
+
+This works.
+```
+var fData = new FormData();
+fData.append("username", username);
+fData.append("password", password);
+fData.append("client_id", client_id);
+fData.append("client_secret", client_secret);
+fData.append("grant_type", grant_type);
+```
+
+Step 3 : Simply fetch and process response. The current processing extracts the access_token from the response. Fetch() returns a promise, once resolved returns
+the response which asynchronously returns the response body via ```.text()``` method.
+
+```
+fetch('https://login.salesforce.com/services/oauth2/token',{
+	method: 'POST', 
+  body : data    
+})
+.then(response=>response.text()) //Get the text asynchronously
+.then(data=>{
+  console.dir(JSON.parse(data).access_token);
+})
+.catch(error=>{
+  console.log('Error : ' + error);
+});
+```
+Yaay! You get your access token ready !
+
+We can use this access token in subsequent calls with ```Bearer : <access_token>``` in header. Important to note that the token needs ot be in header and not
+in request body.
+
+#EOF
