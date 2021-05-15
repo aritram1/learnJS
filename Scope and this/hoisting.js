@@ -64,5 +64,6 @@ var sayhello2 = function(h){return h;} //does not work. why??? (TBD)
 //=================================
 
 console.log(sayhello03('3'));
-let sayhello3 = function(h){return h;} //does not work, because let no hoisting // ReferenceError: sayhello3 is not defined
+let sayhello3 = function(h){return h;} //does not work, because let no hoisting
+// ReferenceError: sayhello3 is not defined
 //=================================
