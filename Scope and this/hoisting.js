@@ -47,3 +47,22 @@ console.log(p); //Undefined
 p = 12;
 
 //So for hoisting : the definition of v has literally hoisted up to global scope! >:D
+
+// Hoisting for funciton.
+
+//Let's have a look.
+
+// What happens if you call a method before it's defined?
+
+console.log(sayhello1('1'));
+function sayhello1(h){return h;} //works because of hoisting
+//=================================
+
+console.log(sayhello2('2'));
+var sayhello2 = function(h){return h;} //does not work. why??? (TBD)
+//TypeError: sayhello2 is not a function
+//=================================
+
+console.log(sayhello03('3'));
+let sayhello3 = function(h){return h;} //does not work, because let no hoisting // ReferenceError: sayhello3 is not defined
+//=================================
