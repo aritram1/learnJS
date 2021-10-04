@@ -1,0 +1,69 @@
+// This is a sample of having two iterators on an Object and making them generate and iterate records after 1 seconds OR after 2 seconds and 
+// they can live a certain period of time after which they won't generate any value (meaning after MAX_TIME is elapsed, they will only 
+// generate values with `done: false`)
+let MAX_TIME = 10000; //in miliseconds
+// Also hereby we will check some prototypal inheritance, by setting Random Number's prootype to be the `Number` object.
+
+// A generic Number object is defined with only one method that always return true
+let Numbers = {
+    isNumber : n => typeof n == 'number'
+}
+
+//Random Number object
+let RandomNumbers = {
+    //getLong: (x)=> x==undefined ? Math.random() : new Array(Math.random().toString()).slice(0,x)
+    current: 0,
+    all : [],
+    getCurrent: ()=> RandomNumbers.current? RandomNumbers.current : RandomNumbers.generate(),
+    getLast: ()=> new Array(RandomNumbers.all).pop(),
+    generate: ()=>{
+            RandomNumbers.current = Math.random().toFixed(6);
+            RandomNumbers.all.push(RandomNumbers.current);
+            return RandomNumbers.current;
+    }
+}
+
+
+//console.log('before=>' + RandomNumbers.isNumber); //the prop is not yet present
+Object.setPrototypeOf(RandomNumbers, Numbers); //prototypal inheritance
+//console.log('After=>' + RandomNumbers.isNumber); //the prop is now present via proto chain
+
+testIterate(); //test that iterator does not work yet
+
+// Define a special iterator or generator for the object by defining `Symbol.iterator` key with a function.
+// The iterators here will have a name that will be included in the generated value by it
+// The iterators here will have a lifespan to work (e.g. say 10 seconds). After that they wil not generate any value
+RandomNumbers[Symbol.iterator]= function (iteratorName){
+    let startTime = Date.now();
+    return {
+        next: function(){
+            let done = (Date.now() - startTime) > MAX_TIME;
+            let value = done ? null : RandomNumbers.generate();
+            let item = {iteratorName: iteratorName, value: value , done: done}
+            console.log(`${new Date().toLocaleTimeString()} : ${item.iteratorName} -> ${JSON.stringify(item)}`);
+            return item;
+        }
+    }
+}
+
+testIterate(); //test that iterator works now
+
+//util function
+function testIterate(){
+    if(!RandomNumbers[Symbol.iterator]) console.log('Iterator not yet defined');
+    else{
+        let iteratorFunction = RandomNumbers[Symbol.iterator];
+        let it1 = iteratorFunction('Iterator1');
+        let it2 = iteratorFunction('Iterator2');
+        timerId1 = setInterval(()=>{
+            let v = it1.next();
+            if(v.done) clearInterval(timerId1);
+        }, 2000);
+        timerId2 = setInterval(()=>{
+            let v = it2.next();
+            if(v.done) clearInterval(timerId2);
+        }, 3000);
+    }
+}
+
+#EOF :)
